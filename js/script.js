@@ -35,11 +35,18 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 // MENU MOBILE
 // ===============================
 const navLinks = document.querySelector('.nav-links');
-const logo = document.querySelector('.logo');
 
-logo.addEventListener('click', () => {
+const menuToggle = document.getElementById('menu-toggle');
+menuToggle.addEventListener('click', () => {
   navLinks.classList.toggle('open');
 });
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+  });
+});
+
 
 // ===============================
 // NAVBAR ACTIVE LINK
